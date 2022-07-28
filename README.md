@@ -1,1 +1,2 @@
-# stack-bof-linux-x64
+# About
+Buffer overflow vulnerability exploitation details.

